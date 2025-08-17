@@ -24,6 +24,7 @@ public class Application {
     @Autowired
     private UserProperties userInfo;
     
+    @GetMapping("/admins")
     public List<String> getAdmins() {
         return users.stream()
             .filter(u -> userInfo.getAdmins().contains(u.getEmail()))
